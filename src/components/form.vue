@@ -141,6 +141,7 @@ export default {
             .el-form-item__label{
                 font-size:16px;
                 color:#333;
+                text-align: left;
             }
             .el-input__inner{
                 height: 33px;

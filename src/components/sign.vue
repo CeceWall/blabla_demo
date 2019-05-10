@@ -1,10 +1,17 @@
 <template>
     <div class="sign">
         <el-form :label-position="labelPosition" :model="signData">
-            
-            <el-form-item label="审查费:">
-                <span>{{issue === '2' ? '54321元' : '321321元'}}</span>
+            <el-form-item label="受理意见:" v-if="!isabled">
+                <el-select v-model="optionValue" placeholder="请选择" v-if="issue === '3'">
+                    <el-option v-for="item in options" :key="item.value" :value="item"></el-option>
+                </el-select>
+                <div v-if="issue === '2'" class="radio-wrapper">
+                    <el-radio v-model="radio" label="同意">同意</el-radio>
+                    <el-radio v-model="radio" label="拒绝">拒绝</el-radio>
+                </div>
             </el-form-item>
+            
+            <div style="font-size:16px;">审查费{{issue === '2' ? '：54321元' : '共计：321321元'}}</div>
             <el-form-item label="申请人姓名:">
                 <el-input v-model="signData.name" style="width: 150px;" :disabled="!isabled"></el-input>
             </el-form-item>
@@ -26,13 +33,16 @@ export default {
     props: ['issue', 'isabled'],
     data () {
         return {
-            labelPosition: 'right',
+            radio: '',
+            optionValue: '',
+            labelPosition: 'left',
             signData: {
                 name: '',
                 duties: '',
                 sign: '',
                 date: '',
-            }
+            },
+            options: ['同意受理', '拒绝受理']
         }
     },
     methods: {
@@ -81,6 +91,9 @@ export default {
             width: 200px;
             height: 40px;
             margin: 40px auto 20px;
+        }
+        .el-select,.radio-wrapper{
+            margin-bottom: 20px;
         }
     }
 </style>
