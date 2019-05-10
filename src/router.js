@@ -40,6 +40,14 @@ export default new Router({
               path: '/demo2/pages/home',
               component: () => import('./views/demo-2/Home/Home.vue'),
             },
+            {
+              path: '/demo2/pages/auth-step1',
+              component: () => import('./views/demo-2/auth-step1/index.vue'),
+            },
+            {
+              path: '/demo2/pages/auth-step2',
+              component: () => import('./views/demo-2/auth-step2/index.vue'),
+            }
           ],
         },
       ],

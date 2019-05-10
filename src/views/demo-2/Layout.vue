@@ -8,9 +8,12 @@
         <router-link to="/demo2/login">退出</router-link>
       </div>
     </div>
-    <div class="layout-breadcrumb" style="padding: 0 111px " >
-      <span style="font-size: 14px" @click="$router.replace('/demo2/pages/home')">首页</span>
-      <span style="font-size: 14px" @click="$router.back()"> &gt; </span>
+    <div class="layout-breadcrumb" style="padding: 0 111px ">
+      <div v-if="breadcrumb" style="cursor: pointer">
+        <span @click="$router.replace('/demo2/pages/home')">首页</span>
+        <span style="font-size: 14px" @click="$router.back()">&nbsp;&gt;&nbsp;</span>
+        <span v-html="breadcrumb"></span>
+      </div>
     </div>
     <div class="layout-content">
       <router-view />
@@ -27,6 +30,9 @@ export default {
     username() {
       return Data.user.username;
     },
+    breadcrumb() {
+      return Data.breadcrumb;
+    }
   },
 };
 </script>
@@ -53,6 +59,7 @@ export default {
 
   .layout-breadcrumb {
     height: 30px;
+    line-height: 30px;
     flex: 0 0 auto;
   }
 

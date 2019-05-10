@@ -45,9 +45,14 @@
 </template>
 
 <script>
+import Data from '@/data';
+
 export default {
   name: 'index.vue',
   computed: {},
+  created() {
+    Data.breadcrumb = '审查组 > 补充型号合格证审定 > <span class="breadcrumb-last"> 补充型号合格证申请书</span>';
+  },
   data() {
     return {
       auth: [

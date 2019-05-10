@@ -8,6 +8,7 @@ export default new Vue({
   data() {
     return {
       user: initialUser,
+      breadcrumb: '',
       demo3: {},
       demo2: {
         home: {
@@ -15,7 +16,7 @@ export default new Vue({
             tab1: [
               {
                 name: '待处理消息',
-                text: ['1', '2', '3'],
+                image: [require('@/views/demo-2/Home/tab1.png')],
               },
               {
                 name: '待处理文档',
@@ -32,7 +33,7 @@ export default new Vue({
                 image: [
                   require('@/views/demo-2/Home/tab2.png'),
                   require('@/views/demo-2/Home/tab2.png'),
-                ]
+                ],
               },
               { name: '审定中项目' },
               { name: '项目草稿' },
@@ -49,6 +50,94 @@ export default new Vue({
                   '出口适航证',
                 ],
 
+              },
+            ],
+          },
+          XXX受理员: {
+            tab1: [
+              {
+                name: '待阅读通知',
+                image: [require('@/views/demo-2/Home/tab1.png')],
+              },
+              {
+                name: '待处理批示',
+                text: [],
+              },
+              {
+                name: '待处理考勤',
+                text: [],
+              },
+            ],
+            tab2: [
+              {
+                name: '待受理项目',
+                image: [
+                  require('@/views/demo-2/Home/tab2-shouliyuan.png'),
+                ],
+              },
+              { name: '审查中项目' },
+              { name: '已受理项目' },
+
+            ],
+            tab3: [
+              {
+                name: '通知公告',
+                image: [
+                  require('@/views/demo-2/Home/tab3-tongzhigonggao.png'),
+                ],
+              },
+              {
+                name: '政策发布及解读',
+              },
+              {
+                name: '法律法规',
+              },
+              {
+                name: '标准规范',
+              },
+            ],
+          },
+          XXX审查员: {
+            tab1: [
+              {
+                name: '待阅读通知',
+                image: [require('@/views/demo-2/Home/tab1.png')],
+              },
+              {
+                name: '待处理批示',
+                text: [],
+              },
+              {
+                name: '待处理考勤',
+                text: [],
+              },
+            ],
+            tab2: [
+              {
+                name: '待受理项目',
+                image: [
+                  require('@/views/demo-2/Home/tab2-shenchayuan.png'),
+                ],
+              },
+              { name: '审查中项目' },
+              { name: '已受理项目' },
+
+            ],
+            tab3: [
+              {
+                name: '通知公告',
+                image: [
+                  require('@/views/demo-2/Home/tab3-tongzhigonggao.png'),
+                ],
+              },
+              {
+                name: '政策发布及解读',
+              },
+              {
+                name: '法律法规',
+              },
+              {
+                name: '标准规范',
               },
             ],
           },

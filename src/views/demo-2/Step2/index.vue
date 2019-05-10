@@ -4,8 +4,9 @@
       <h1>
         相关资料
       </h1>
-      <Upload action="//jsonplaceholder.typicode.com/posts/" accept=".rar, .zip, .pdf, .doc, .jpg, .png"
-              :on-success="handleS"
+      <Upload
+        action="//jsonplaceholder.typicode.com/posts/" accept=".rar, .zip, .pdf, .doc, .jpg, .png"
+        :on-success="handleS"
       >
         <Button type="primary" icon="ios-cloud-upload-outline">点击上传资料</Button>
         <span style="margin-left: 12px; color: #999">支持扩展名: rar, zip, pdf, doc, docx, jpg, png</span>
@@ -17,6 +18,7 @@
 
 <script>
 import vForm from '@/components/form.vue';
+import Data from '@/data';
 import swal from 'sweetalert';
 
 export default {
@@ -30,6 +32,9 @@ export default {
       disabled: true,
     };
   },
+  created() {
+    Data.breadcrumb = '零部件审定 > <span class="breadcrumb-last">零部件制造人审评书</span>';
+  },
   methods: {
     handleS() {
       console.log(1);
@@ -39,10 +44,12 @@ export default {
       this.loading = true;
       setTimeout(() => {
         this.loading = false;
-        swal('提交成功', '您的合格证已提交', 'success', {
+        swal('提交成功', '你的资料已提交', 'success', {
           buttons: ['确认'],
         })
-          .then(() => { this.$router.replace('/demo2/pages/home'); });
+          .then(() => {
+            this.$router.replace('/demo2/pages/home');
+          });
       }, 1000);
     },
   },
