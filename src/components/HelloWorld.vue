@@ -28,15 +28,17 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
     <v-form></v-form>
+    <v-sign></v-sign>
   </div>
 </template>
 
 <script>
 import vForm from '../components/form'
+import vSign from '../components/sign'
 
 export default {
   components: {
-    vForm
+    vForm, vSign
   },
   name: 'HelloWorld',
   props: {

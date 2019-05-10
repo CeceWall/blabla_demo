@@ -5,11 +5,12 @@
         <span class="username">
           欢迎{{username}}，
         </span>
-        <router-link to="/login">退出</router-link>
+        <router-link to="/demo2/login">退出</router-link>
       </div>
     </div>
-    <div class="layout-breadcrumb">
-      <a @click="$router.back()">返回</a>
+    <div class="layout-breadcrumb" style="padding: 0 111px " >
+      <span style="font-size: 14px" @click="$router.replace('/demo2/pages/home')">首页</span>
+      <span style="font-size: 14px" @click="$router.back()"> &gt; </span>
     </div>
     <div class="layout-content">
       <router-view />
