@@ -5,7 +5,7 @@
         <span class="username">
           欢迎{{username}}，
         </span>
-        <router-link to="/login">退出</router-link>
+        <router-link to="/demo2/login">退出</router-link>
       </div>
     </div>
     <div class="layout-breadcrumb" style="padding: 0 111px " >

@@ -8,12 +8,10 @@ export default new Vue({
   data() {
     return {
       user: initialUser,
-      demo3: {
-
-      },
+      demo3: {},
       demo2: {
         home: {
-          liuxu1111: {
+          XXX航空工业: {
             tab1: [
               {
                 name: '待处理消息',
@@ -29,10 +27,29 @@ export default new Vue({
               },
             ],
             tab2: [
-              { name: '办结项目' },
+              {
+                name: '办结项目',
+                image: [
+                  require('@/views/demo-2/Home/tab2.png'),
+                  require('@/views/demo-2/Home/tab2.png'),
+                ]
+              },
               { name: '审定中项目' },
               { name: '项目草稿' },
 
+            ],
+            tab3: [
+              {
+                name: '证件申请',
+                text: [
+                  '零部件设计批准认可证',
+                  '型号合格证',
+                  '补充型号合格证',
+                  '型号认可证',
+                  '出口适航证',
+                ],
+
+              },
             ],
           },
         },

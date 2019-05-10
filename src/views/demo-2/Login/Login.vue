@@ -27,7 +27,7 @@ export default {
   methods: {
     handleLogin() {
       Data.login(this.username);
-      this.$router.push('/pages/home');
+      this.$router.push('/demo2/pages/home');
     },
   },
 };
