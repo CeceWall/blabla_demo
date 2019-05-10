@@ -77,6 +77,14 @@ export default new Router({
             {
               path: '/demo3/pages/exam2',
               component: () => import('./views/demo-3/index3/HomeFrom.vue'),
+              // eslint-disable-next-line no-dupe-keys
+              path: '/demo3/pages/examine',
+              // eslint-disable-next-line no-dupe-keys
+              component: () => import('./views/demo-3/examine/index.vue'),
+            },
+            {
+              path: '/demo3/pages/addMembers',
+              component: () => import('./views/demo-3/addMembers/index.vue'),
             },
           ],
         },
