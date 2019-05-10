@@ -152,7 +152,7 @@ export default {
           .el-form-item__label{
             margin-bottom: 0;
             padding-bottom: 0;
-            line-height: 28px;
+            line-height: 22px;
           }
         }
     }
