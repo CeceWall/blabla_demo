@@ -62,6 +62,14 @@ export default new Router({
               path: '/demo3/pages/acce2',
               component: () => import('./views/demo-3/index2/HomeFrom.vue'),
             },
+            {
+              path: '/demo3/pages/examine',
+              component: () => import('./views/demo-3/examine/index.vue'),
+            },
+            {
+              path: '/demo3/pages/addMembers',
+              component: () => import('./views/demo-3/addMembers/index.vue'),
+            },
           ],
         },
       ],

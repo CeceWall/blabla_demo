@@ -1,6 +1,10 @@
 <template>
     <div class="sign">
         <el-form :label-position="labelPosition" :model="signData">
+            
+            <el-form-item label="审查费:">
+                <span>{{issue === '2' ? '54321元' : '321321元'}}</span>
+            </el-form-item>
             <el-form-item label="申请人姓名:">
                 <el-input v-model="signData.name" style="width: 150px;" :disabled="!isabled"></el-input>
             </el-form-item>
