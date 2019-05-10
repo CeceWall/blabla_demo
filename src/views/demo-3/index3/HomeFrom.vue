@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     out() {
-      this.$router.push('/demo3/login2');
+      this.$router.push('/demo3/login1');
     },
   },
 };
