@@ -27,11 +27,17 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <v-form></v-form>
   </div>
 </template>
 
 <script>
+import vForm from '../components/form'
+
 export default {
+  components: {
+    vForm
+  },
   name: 'HelloWorld',
   props: {
     msg: String,
