@@ -38,6 +38,11 @@ export default new Router({
           path: '/demo3/login',
         },
         {
+          component: () => import('./views/demo-3/Login/Login1.vue'),
+          name: 'd3Login1',
+          path: '/demo3/login1',
+        },
+        {
           path: '/demo3/pages/:views+',
           component: () => import('./views/demo-3/Layout.vue'),
           children: [
@@ -48,6 +53,14 @@ export default new Router({
             {
               path: '/demo3/pages/applicant',
               component: () => import('./views/demo-3/Index/HomeFrom.vue'),
+            },
+            {
+              path: '/demo3/pages/acce',
+              component: () => import('./views/demo-3/index2/Home.vue'),
+            },
+            {
+              path: '/demo3/pages/acce2',
+              component: () => import('./views/demo-3/index2/HomeFrom.vue'),
             },
           ],
         },

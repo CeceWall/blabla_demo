@@ -1,7 +1,6 @@
 <template>
     <div class="applicant">
-        <div class="out" @click="out"></div>
-        <el-input class="input" v-model="input"></el-input>
+        <div class="out" @click="out">退出</div>
         <div class="upload">
             <el-upload
                 class="upload-demo"
@@ -31,7 +30,7 @@ export default {
     .applicant{
         height: 100%;
         width: 100%;
-        background: url('../image/3申请.png');
+        background: url('../image/5受理通知书提交.png');
         .out{
             position: absolute;
             right:1.2%;;
@@ -39,8 +38,6 @@ export default {
             font-size:12px;
             color:rgb(238, 238, 238);
             cursor: pointer;
-            width:20px;
-            height:16px;
             &.out:hover{
                 font-weight:550;
             }
