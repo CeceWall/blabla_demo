@@ -3,10 +3,10 @@
     <div class="login-input">
       <el-form>
         <el-form-item>
-         <el-input class="name" placeholder="请输入用户名" v-model="username"></el-input>
+         <el-input class="name icon-user" placeholder="请输入用户名" v-model="username" prefix-icon="icon-user"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input class="name" placeholder="请输入密码" type="password"></el-input>
+          <el-input class="name icon-password" placeholder="请输入密码" type="password" prefix-icon="icon-password"></el-input>
         </el-form-item>
       </el-form>
       <span class="forget">忘记密码</span>
@@ -68,6 +68,23 @@ export default {
     input{
       border:none
     }
-
+    .icon-user{
+      .el-input__prefix{
+        display: inline-block;
+        width: 22px;
+        height: 23px;
+        background: url(../image/icon_user.png) center;
+        margin-top: 7px;
+      }
+    }
+    .icon-password{
+      .el-input__prefix{
+        display: inline-block;
+        width: 20px;
+        height: 22px;
+        background: url(../image/icon_password.png);
+        margin-top: 7px;
+      }     
+    }   
   }
 </style>
