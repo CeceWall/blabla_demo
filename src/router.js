@@ -8,17 +8,23 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/login',
-      name: '登录',
-      component: () => import('./views/demo-2/Login/Login.vue'),
-    },
-    {
-      path: '/pages/:views+',
-      component: () => import('./views/demo-2/Layout.vue'),
+      path: '/demo2/:views+',
+      component: () => import('./views/demo-2/index.vue'),
       children: [
         {
-          path: '/pages/home',
-          component: () => import('./views/demo-2/Home/Home.vue'),
+          component: () => import('./views/demo-2/Login/Login.vue'),
+          name: '登录',
+          path: '/demo2/login',
+        },
+        {
+          path: '/demo2/pages/:views+',
+          component: () => import('./views/demo-2/Layout.vue'),
+          children: [
+            {
+              path: '/pages/home',
+              component: () => import('./views/demo-2/Home/Home.vue'),
+            },
+          ],
         },
       ],
     },
