@@ -21,7 +21,7 @@ export default new Router({
           component: () => import('./views/demo-2/Layout.vue'),
           children: [
             {
-              path: '/pages/home',
+              path: '/demo2/pages/home',
               component: () => import('./views/demo-2/Home/Home.vue'),
             },
           ],
