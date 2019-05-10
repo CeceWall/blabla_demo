@@ -27,7 +27,7 @@ export default {
   methods: {
     handleLogin() {
       Data.login(this.username);
-      this.$router.push('/pages/home')
+      this.$router.push('/pages/home');
     },
   },
 };
@@ -37,7 +37,7 @@ export default {
   .login.page {
     height: 100%;
     width: 100%;
-    background: url('./Login.png') 0 0/cover no-repeat;
+    background: url('Login.png') 0 0/cover no-repeat;
   }
   .login-input {
     width: 350px;

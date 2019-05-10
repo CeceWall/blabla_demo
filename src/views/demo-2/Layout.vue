@@ -40,7 +40,7 @@ export default {
   .layout-header {
     height: 215px;
     flex: 0 0 auto;
-    background: url('./layout-header.png') 0 0/cover no-repeat;
+    background: url('layout-header.png') 0 0/cover no-repeat;
     position: relative;
   }
 

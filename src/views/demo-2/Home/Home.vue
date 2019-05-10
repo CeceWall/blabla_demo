@@ -21,7 +21,7 @@
       </el-col>
     </el-row>
     <div style="margin-top: 24px">
-      <img src="./chang-yong-gong-neng.png" />
+      <img src="chang-yong-gong-neng.png" />
     </div>
   </div>
 </template>

@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home/Home.vue';
 
 Vue.use(Router);
 
@@ -11,17 +10,17 @@ export default new Router({
     {
       path: '/login',
       name: '登录',
-      component: () => import('./views/Login/Login.vue'),
+      component: () => import('./views/demo-2/Login/Login.vue'),
     },
     {
       path: '/pages/:views+',
-      component: () => import('./views/Layout.vue'),
+      component: () => import('./views/demo-2/Layout.vue'),
       children: [
         {
           path: '/pages/home',
-          component: () => import('./views/Home/Home.vue')
-        }
-      ]
+          component: () => import('./views/demo-2/Home/Home.vue'),
+        },
+      ],
     },
   ],
 });
