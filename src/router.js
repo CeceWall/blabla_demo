@@ -79,6 +79,10 @@ export default new Router({
               component: () => import('./views/demo-3/index3/HomeFrom.vue'),
             },
             {
+              path: '/demo3/pages/examine',
+              component: () => import('./views/demo-3/examine/index.vue'),
+            },
+            {
               path: '/demo3/pages/addMembers',
               component: () => import('./views/demo-3/addMembers/index.vue'),
             },

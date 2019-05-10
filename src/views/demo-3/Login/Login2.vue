@@ -28,7 +28,7 @@ export default {
   methods: {
     handleLogin() {
       // Data.login(this.username);
-      this.$router.push('/demo3/pages/acce');
+      this.$router.push('/demo3/pages/exam');
     },
   },
 };
