@@ -11,6 +11,9 @@
                 <el-button size="small">点击上传</el-button>
             </el-upload>
         </div>
+        <div class="btn">
+            <el-button type="primary" @click="btn='提交成功'">{{btn}}</el-button>
+        </div>
     </div>
 </template>
 <script>
@@ -18,6 +21,7 @@ export default {
   data() {
     return {
       input: '',
+      btn: '检验并提交',
     };
   },
   methods: {
@@ -32,6 +36,15 @@ export default {
         height: 100%;
         width: 100%;
         background: url('../image/3申请.png');
+        .btn{
+            position: absolute;
+            left:48%;
+            top:930px;
+            button{
+                width:200px;
+                height:40px;
+            }
+        }
         .out{
             position: absolute;
             right:1.2%;;
@@ -39,7 +52,7 @@ export default {
             font-size:12px;
             color:rgb(238, 238, 238);
             cursor: pointer;
-            width:20px;
+            width:30px;
             height:16px;
             &.out:hover{
                 font-weight:550;
