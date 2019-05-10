@@ -12,8 +12,13 @@
 </template>
 
 <script>
+import Data from '@/data';
+
 export default {
   name: 'index.vue',
+  created() {
+    Data.breadcrumb = '审查组 > <span class="breadcrumb-last">补充型号合格证审定>补充型号合格证申请书</span>';
+  },
   data() {
     return {
       loading: false,

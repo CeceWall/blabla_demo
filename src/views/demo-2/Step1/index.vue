@@ -9,22 +9,33 @@
 
 <script>
 import vForm from '@/components/form.vue';
+import Data from '@/data';
 
 export default {
   name: 'index',
   components: {
     vForm,
-  }
+  },
+  created() {
+    Data.breadcrumb = '零部件审定 > <span class="breadcrumb-last">零部件制造人审评书</span>';
+  },
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped>
   .step1 {
     padding-bottom: 24px;
     background: #efefef;
     background-clip: content-box;
     height: 100%;
+
   }
+
+  .step1 >>> .el-form-item__label {
+    color: #333 !important;
+    font-size: 14px !important;
+  }
+
   .el-button {
     position: absolute;
     bottom: 36px;

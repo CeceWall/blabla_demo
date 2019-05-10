@@ -9,7 +9,7 @@
           <el-input placeholder="请输入密码" type="password"></el-input>
         </el-form-item>
       </el-form>
-     <el-button type="primary" @click="handleLogin">登录</el-button>
+     <el-button v-loading="loading" type="primary" @click="handleLogin">登录</el-button>
     </div>
   </div>
 </template>
@@ -21,13 +21,17 @@ export default {
   name: 'Login',
   data() {
     return {
+      loading: false,
       username: '',
     };
   },
   methods: {
     handleLogin() {
       Data.login(this.username);
-      this.$router.push('/demo2/pages/home');
+      this.loading = true;
+      setTimeout(() => {
+        this.$router.push('/demo2/pages/home');
+      }, 702);
     },
   },
 };

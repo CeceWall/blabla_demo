@@ -4,15 +4,17 @@
       <el-col :span="12">
         <el-tabs type="border-card">
           <el-tab-pane v-for="tab of tab1" :label="tab.name">
-            <div class="tab-item"></div>
+            <div class="tab-item">
+              <img :src="image" v-for="image of tab.image" style="margin-bottom: 12px" />
+            </div>
           </el-tab-pane>
         </el-tabs>
       </el-col>
       <el-col :span="12">
         <el-tabs type="border-card">
           <el-tab-pane v-for="tab of tab2" :label="tab.name">
-            <div class="tab-item" @click="$router.push('/demo2/pages/process-step1')">
-              <img :src="image" v-for="image of tab.image" style="margin-bottom: 12px" />
+            <div class="tab-item" @click="$router.push(currentUser === 'XXX受理员' ? '/demo2/pages/auth-step1' : '/demo2/pages/choose')">
+              <img :src="image" v-for="image of tab.image" style="margin-bottom: 12px;width:100%" />
             </div>
           </el-tab-pane>
         </el-tabs>
@@ -32,6 +34,9 @@
               </span>
             </span>
           </div>
+          <div v-else class="tab-item">
+            <img :src="img" v-for="img of tab.image" style="width: 100%" />
+          </div>
         </el-tab-pane>
       </el-tabs>
     </div>
@@ -43,6 +48,9 @@ import Data from '@/data';
 
 export default {
   name: 'home',
+  created() {
+   Data.breadcrumb = ''
+  },
   computed: {
     currentUser() {
       return Data.currentUser;
@@ -64,9 +72,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .home {
-  }
-
   .tab-item {
     height: 288px;
   }
@@ -81,7 +86,8 @@ export default {
     text-align: center;
     line-height: 60px;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
       background-color: darken(#efefef, 5%);
     }
   }

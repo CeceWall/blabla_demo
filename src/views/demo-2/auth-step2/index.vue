@@ -1,18 +1,18 @@
 <template>
   <div class="step2 page" v-loading="loading">
-    <v-form issue="2" :isabled="false"></v-form>
-    <el-button type="primary" @click="handleClick">自动校验，并提交</el-button>
+    <v-sign></v-sign>
+    <el-button type="primary" @click="handle">自动校验，并提交</el-button>
   </div>
 </template>
 
 <script>
-import vForm from '@/components/form.vue';
+import vSign from '@/components/sign.vue';
 import swal from 'sweetalert';
 
 export default {
   name: 'Step2',
   components: {
-    vForm,
+    vSign,
   },
   data() {
     return {
@@ -20,14 +20,13 @@ export default {
     };
   },
   methods: {
-    handleClick() {
-      this.loading = true;
-      setTimeout(() => {
-        this.loading = false;
-        swal('提交成功', '您的合格证已提交', 'success', {
-          buttons: ['确认'],
+    handle() {
+      swal('操作成功', '校验并提交成功！', 'success', {
+        buttons: ['确认'],
+      })
+        .then(() => {
+          this.$router.replace('/demo2/pages/home');
         });
-      }, 1000);
     },
   },
 };
