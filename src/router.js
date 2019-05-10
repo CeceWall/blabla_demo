@@ -44,30 +44,5 @@ export default new Router({
         },
       ],
     },
-    {
-      path: '/demo3/:views+',
-      component: () => import('./views/demo-3/index.vue'),
-      children: [
-        {
-          component: () => import('./views/demo-3/Login/Login.vue'),
-          name: 'd3Login',
-          path: '/demo3/login',
-        },
-        {
-          path: '/demo3/pages/:views+',
-          component: () => import('./views/demo-3/Layout.vue'),
-          children: [
-            {
-              path: '/demo3/pages/home',
-              component: () => import('./views/demo-3/Index/Home.vue'),
-            },
-            {
-              path: '/demo3/pages/applicant',
-              component: () => import('./views/demo-3/Index/HomeFrom.vue'),
-            },
-          ],
-        },
-      ],
-    },
   ],
 });

@@ -2,9 +2,9 @@
     <div class="sign">
         <el-form :label-position="labelPosition" :model="signData">
             <el-form-item label="申请人姓名:">
-                <el-input v-model="signData.name" style="width: 150px;"></el-input>
+                <el-input v-model="signData.name" style="width: 150px;" :disabled="!isabled"></el-input>
             </el-form-item>
-            <el-form-item label="申请人职务:">
+            <el-form-item label="申请人职务:" v-if="issue === '3' && isabled">
                 <el-input v-model="signData.duties" style="width: 200px;"></el-input>
             </el-form-item>
             <el-form-item label="申请人签名:">
@@ -19,6 +19,7 @@
 </template>
 <script>
 export default {
+    props: ['issue', 'isabled'],
     data () {
         return {
             labelPosition: 'right',
@@ -47,9 +48,25 @@ export default {
         }
         this.signData.date = `${year }${seperator1 }${month }${seperator1}${strDate}`;
       },
+      setData () {
+        this.signData.name = '赵XX';
+      },
+      acceptParams () {
+        if (this.issue == '2') {
+          this.labelPosition = 'top';
+          var Arr = document.getElementsByClassName('el-form-item');
+          for(let i = 0; i < Arr.length; i++) {
+            Arr[i].className = 'el-form-item el-form-item2';
+          }
+        }
+      },
     },
     mounted () {
-        this.getNowFormatDate();
+      this.getNowFormatDate();
+      this.acceptParams();
+      if(!this.isabled){
+        this.setData();
+      }
     }
 }
 </script>
