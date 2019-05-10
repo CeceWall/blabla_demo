@@ -7,7 +7,7 @@
 export default {
   methods: {
     jump() {
-      this.$router.push('/demo3/pages/acce2');
+      this.$router.push('/demo3/pages/exam2');
     },
   },
 };

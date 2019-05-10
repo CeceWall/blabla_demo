@@ -1,39 +1,42 @@
 <template>
     <div class="applicant">
-        <div class="out" @click="out">退出</div>
-        <div class="upload">
-            <el-select v-model="input" placeholder="请选择">
-                <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-                </el-option>
-            </el-select>
+      <div class="members">
+            <span
+              v-for="i in span"
+              :key="i"
+             :class="i.show?'span':''"
+            @click="handle(i.name)"
+             >{{i.name}}</span>
         </div>
-        <div class="btn">
-            <el-button type="primary" @click="btn='受理成功'">{{btn}}</el-button>
-        </div>
+        <el-button class="btn" @click="out">选定完成</el-button>
     </div>
 </template>
 <script>
+
 export default {
   data() {
     return {
-      btn: '检验并提交',
-      input: '同意受理',
-      options: [{
-        value: '同意受理',
-        label: '同意受理',
-      }, {
-        value: '拒绝受理',
-        label: '拒绝受理',
-      }],
+      span: [{ name: '张三', show: false },
+        { name: '王秒', show: false },
+        { name: '李依依', show: false },
+        { name: '王五', show: false },
+        { name: '林山', show: false },
+        { name: '马三立', show: false },
+      ],
     };
   },
   methods: {
+    handle(name) {
+      this.span.forEach((ite) => {
+        const item = ite;
+        // eslint-disable-next-line eqeqeq
+        if (item.name == name) {
+          item.show = !item.show;
+        }
+      });
+    },
     out() {
-      this.$router.push('/demo3/login1');
+      this.$router.push('/demo3/pages/examine');
     },
   },
 };
@@ -42,31 +45,33 @@ export default {
     .applicant{
         height: 100%;
         width: 100%;
-        background: url('../image/5受理通知书提交.png');
-        .out{
-            position: absolute;
-            right:1.2%;;
-            top:25px;
-            font-size:12px;
-            color:rgb(238, 238, 238);
+        background: url('../image/6审查组员.png');
+        .members{
+          position:absolute;
+          left:14.6%;
+          top:125px;
+          span{
+            display: inline-block;
+            padding:12px 64px;
+            margin-right:20px;
+            background: #fff;
+            border:1px solid #eee;
             cursor: pointer;
-            &.out:hover{
-                font-weight:550;
-            }
+            color:rgb(49, 49, 49);
+          }
+          .span{
+            border:1px solid #4572fe;
+            color:#4572fe;
+          }
         }
         .btn{
-            position: absolute;
-            left:48%;
-            top:930px;
-            button{
-                width:200px;
-                height:40px;
-            }
-        }
-        .upload{
-            position: absolute;
-            left:19%;
-            top:327px;
+          position:absolute;
+          left:14.6%;
+          top:278px;
+          width:200px;
+          height:40px;
+          background: #4f7dfe;
+          color:#fff;
         }
     }
 </style>
