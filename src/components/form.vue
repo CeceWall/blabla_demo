@@ -69,6 +69,7 @@
 </template>
 <script>
 export default {
+  props: ['issue', 'isabled'],
   data () {
     return {
       issue: '',
@@ -102,7 +103,7 @@ export default {
         this.labelPosition = 'top';
         var Arr = document.getElementsByClassName('el-form-item');
         for(let i = 0; i < Arr.length; i++) {
-            Arr[i].style.cssText='display:inline-grid';
+            Arr[i].className = 'el-form-item el-form-item2';
         }
       }
     },
@@ -129,8 +130,7 @@ export default {
     }
   },
   created() {
-    this.issue = '2';
-    this.isabled = true
+    this.issue = 2
   }
 }
 
@@ -149,6 +149,14 @@ export default {
                 height: 33px;
                 line-height: 33px;
             }
+        }
+        .el-form-item2{
+          display: inline-grid;
+          .el-form-item__label{
+            margin-bottom: 0;
+            padding-bottom: 0;
+            line-height: 28px;
+          }
         }
     }
 </style>
