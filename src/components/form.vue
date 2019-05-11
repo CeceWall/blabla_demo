@@ -59,7 +59,8 @@
       ></el-input>
     </el-form-item>
     <br />
-    <el-form-item :label="issue === '2'?'证件编号' : '使用范围'" v-if="isabled && issue === '3' || issue === '2'">
+    <el-form-item :label="issue === '2'?'证件编号' : '使用范围'"
+    v-if="isabled && issue === '3' || issue === '2'">
       <el-input
         v-model="formData.range" style="width: 250px;"
         :disabled="!isabled"
@@ -108,8 +109,6 @@ export default {
   props: ['issue', 'isabled'],
   data() {
     return {
-      issue: '',
-      isabled: false,
       labelPosition: 'right',
       formData: {
         applicantMan: '',
@@ -126,7 +125,6 @@ export default {
         productMan: '',
         install: '',
         type: '',
-        range: '',
         seriesNum: '',
         registerNum: '',
       },
@@ -174,7 +172,7 @@ export default {
   .el-form {
     /deep/ .el-form-item {
       display: inline-flex;
-      margin-bottom: 0;
+      margin-bottom: -10px;
       margin-right: 23px;
 
       .el-form-item__label {
@@ -191,6 +189,7 @@ export default {
 
     /deep/ .el-form-item2 {
       display: inline-grid;
+      margin-bottom: 0;
 
       .el-form-item__label {
         margin-bottom: 0;

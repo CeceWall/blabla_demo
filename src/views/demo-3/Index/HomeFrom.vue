@@ -1,11 +1,14 @@
 <template>
     <div class="applicant">
-        <div class="out" @click="out"></div>
+        <div class="out" @click="out">退出</div>
+        <div class="form-wrapper">
+            <v-form issue='3' isabled=true></v-form>
+        </div>        
         <el-input class="input" v-model="input"></el-input>
         <div class="upload">
             <el-upload
                 class="upload-demo"
-                action="https://jsonplaceholder.typicode.com/posts/"
+                action="/posts"
                 multiple
                 >
                 <el-button size="small">点击上传</el-button>
@@ -17,7 +20,12 @@
     </div>
 </template>
 <script>
+import vForm from '../../../components/form'
+
 export default {
+  components: {
+      vForm,
+  },
   data() {
     return {
       input: '',
@@ -44,6 +52,14 @@ export default {
                 width:200px;
                 height:40px;
             }
+        }
+        .form-wrapper{
+            background-color: #f6f6f6;
+            position: absolute;
+            left: 293px;
+            top: 88px;
+            padding-right: 55px;
+            padding-bottom: 7px;
         }
         .out{
             position: absolute;

@@ -7,7 +7,7 @@
         <div class="accept-wrapper">
             <el-button type="primary" @click="accept(index)" v-for="(item, index) in btns"
             :key="item.index"
-            :class="{green:item.flag,margin87:item.flag==='80',margin80:item.flag==='87',margin85:item.flag==='85'}">
+            :class="{green:item.flag,margin87:item.size==='80',margin80:item.size==='87',margin85:item.size==='85'}">
             {{item.text}}
         </el-button>
         </div>
@@ -24,7 +24,23 @@ export default {
             text: '批准通过并发证',
             btns: [{
                 text: '通过',
-                flag: false
+                flag: false,
+                size: 0,
+            },
+            {
+                text: '通过',
+                flag: false,
+                size: 0,
+            },
+            {
+                text: '通过',
+                flag: false,
+                size: 0,
+            },
+            {
+                text: '通过',
+                flag: false,
+                size: '87',
             },
             {
                 text: '通过',
@@ -32,35 +48,28 @@ export default {
             },
             {
                 text: '通过',
-                flag: false
+                flag: false,
+                size: '85',
             },
             {
                 text: '通过',
-                flag: '87'
+                flag: false,
+                size: 0,
             },
             {
                 text: '通过',
-                flag: false
+                flag: false,
+                size: '80',
             },
             {
                 text: '通过',
-                flag: '85'
+                flag: false,
+                size: 0,
             },
             {
                 text: '通过',
-                flag: false
-            },
-            {
-                text: '通过',
-                flag: '80'
-            },
-            {
-                text: '通过',
-                flag: false
-            },
-            {
-                text: '通过',
-                flag: false
+                flag: false,
+                size: 0,
             },]
         }
     },
