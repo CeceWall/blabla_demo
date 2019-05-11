@@ -1,6 +1,6 @@
 <template>
   <div class="step2 page" v-loading="loading">
-    <v-sign></v-sign>
+    <v-sign issue="2" />
     <el-button type="primary" @click="handle">自动校验，并提交</el-button>
   </div>
 </template>
@@ -36,8 +36,7 @@ export default {
   .step2 {
     height: 100%;
     background-color: #efefef;
-    background-clip: content-box;
-    padding-bottom: 24px;
+    padding: 24px;
   }
 
   .el-button {

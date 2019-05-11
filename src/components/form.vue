@@ -157,6 +157,7 @@ export default {
       this.formData.replaceNum = '无';
       this.formData.seriesNum = 'Y7-123';
       this.formData.registerNum = 'TC321X';
+      this.radio = 'luo';
     },
   },
   mounted() {

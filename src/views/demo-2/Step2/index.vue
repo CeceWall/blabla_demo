@@ -6,25 +6,26 @@
       </h1>
       <Upload
         action="//jsonplaceholder.typicode.com/posts/" accept=".rar, .zip, .pdf, .doc, .jpg, .png"
-        :on-success="handleS"
-      >
+        :on-success="handleS">
         <Button type="primary" icon="ios-cloud-upload-outline">点击上传资料</Button>
         <span style="margin-left: 12px; color: #999">支持扩展名: rar, zip, pdf, doc, docx, jpg, png</span>
       </Upload>
     </div>
+    <v-sign issue="2" :isabled="true"/>
     <el-button type="primary" @click="handleClick" :disabled="disabled">自动校验，并提交</el-button>
   </div>
 </template>
 
 <script>
 import vForm from '@/components/form.vue';
+import vSign from '@/components/sign.vue';
 import Data from '@/data';
 import swal from 'sweetalert';
 
 export default {
   name: 'Step2',
   components: {
-    vForm,
+    vForm, vSign,
   },
   data() {
     return {

@@ -9,17 +9,18 @@
                     <el-radio v-model="radio" label="同意">同意</el-radio>
                     <el-radio v-model="radio" label="拒绝">拒绝</el-radio>
                 </div>
-            </el-form-item>
-            
-            <div style="font-size:16px;">审查费{{issue === '2' ? '：54321元' : '共计：321321元'}}</div>
+            </el-form-item>           
+            <div style="font-size:16px;" v-if="!isabled">审查费{{issue === '2' ? '：54321元' : '共计：321321元'}}</div>
             <el-form-item label="申请人姓名:">
                 <el-input v-model="signData.name" style="width: 150px;" :disabled="!isabled"></el-input>
             </el-form-item>
             <el-form-item label="申请人职务:" v-if="issue === '3' && isabled">
                 <el-input v-model="signData.duties" style="width: 200px;"></el-input>
             </el-form-item>
-            <el-form-item label="申请人签名:">
-                <span style="width: 150px;"></span>
+            <el-form-item label="申请人签名:" style="margin-left: 480px;vertical-align: middle;margin-top: 30px;margin-right: 526px;">
+                <span style="width: 150px;">
+                    <img src="../views/demo-2/Home/sign.png" alt="">
+                </span>
             </el-form-item>
             <el-form-item label="日期:">
                 <span>{{signData.date}}</span>
@@ -62,7 +63,7 @@ export default {
         this.signData.date = `${year }${seperator1 }${month }${seperator1}${strDate}`;
       },
       setData () {
-        this.signData.name = '赵XX';
+        this.signData.name = '刘XX';
       },
       acceptParams () {
         if (this.issue == '2') {
@@ -85,7 +86,9 @@ export default {
 </script>
 <style lang="scss" scoped>
     .el-form{
-        padding: 24px;
+        .el-form-item{
+            display: inline-block;
+        }
         .el-button{
             display: block;
             width: 200px;
