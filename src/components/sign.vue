@@ -24,7 +24,6 @@
             <el-form-item label="日期:">
                 <span>{{signData.date}}</span>
             </el-form-item>
-            <el-button type="primary">检验并提交</el-button>
         </el-form>
     </div>
 </template>
@@ -86,6 +85,7 @@ export default {
 </script>
 <style lang="scss" scoped>
     .el-form{
+        padding: 24px;
         .el-button{
             display: block;
             width: 200px;
