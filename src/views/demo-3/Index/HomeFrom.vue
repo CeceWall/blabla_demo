@@ -58,7 +58,7 @@ export default {
             position: absolute;
             left: 293px;
             top: 88px;
-            padding-right: 55px;
+            padding-right: 240px;
             padding-bottom: 7px;
         }
         .out{

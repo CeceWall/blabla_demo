@@ -6,7 +6,7 @@
          <el-input class="name icon-user" placeholder="请输入用户名" v-model="username" prefix-icon=" icon-user"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input class="name icon-password" placeholder="请输入密码" type="password" prefix-icon="icon-password"></el-input>
+          <el-input class="name icon-password" placeholder="请输入密码" type="password" v-model="password" prefix-icon="icon-password"></el-input>
         </el-form-item>
       </el-form>
       <span class="forget">忘记密码</span>
@@ -23,6 +23,7 @@ export default {
   data() {
     return {
       username: '',
+      password: '',
     };
   },
   methods: {

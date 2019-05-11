@@ -101,7 +101,8 @@ export default {
             left: 206px;
             .el-button{
                 &.active{
-                background-color: rgba(155,224,176,1); 
+                    background-color: rgba(155,224,176,1);
+                    border:none;
                 }
             }            
         }

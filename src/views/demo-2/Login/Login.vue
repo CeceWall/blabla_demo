@@ -6,7 +6,7 @@
          <el-input placeholder="请输入用户名" v-model="username"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input placeholder="请输入密码" type="password"></el-input>
+          <el-input placeholder="请输入密码" type="password" v-model="password"></el-input>
         </el-form-item>
       </el-form>
      <el-button v-loading="loading" type="primary" @click="handleLogin">登录</el-button>
@@ -23,6 +23,7 @@ export default {
     return {
       loading: false,
       username: '',
+      password: '',
     };
   },
   methods: {

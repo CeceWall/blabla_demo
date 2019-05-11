@@ -13,7 +13,7 @@
       <p></p>
     </div>
     <v-sign issue="2" :isabled="true"/>
-    <el-button type="primary" @click="handleClick" :disabled="disabled">自动校验，并提交</el-button>
+    <el-button type="primary" @click="handleClick">自动校验，并提交</el-button>
   </div>
 </template>
 

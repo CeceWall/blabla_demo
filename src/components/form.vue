@@ -81,10 +81,6 @@
       <el-radio v-model="radio" label="hang">航空器</el-radio>
       <el-radio v-model="radio" label="fa">发动机</el-radio>
       <el-radio v-model="radio" label="luo">螺旋桨</el-radio>
-      <el-input
-        v-model="formData.install" style="width: 150px;"
-        :disabled="!isabled"
-      ></el-input>
     </el-form-item>
     <br v-if="issue === '2'" />
     <el-form-item :label="issue === '2'?'原产品型号' : '型别'" v-if="isabled">
